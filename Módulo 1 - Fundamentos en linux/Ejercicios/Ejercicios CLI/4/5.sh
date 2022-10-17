@@ -16,11 +16,3 @@ if [[ $NWORDS -gt 0 ]]; then
 else
         echo "La paralabra $1 no aparece en el fichero"
 fi
-
-
-
-
-
-
-
-
