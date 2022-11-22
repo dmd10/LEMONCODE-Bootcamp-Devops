@@ -86,6 +86,9 @@ spec:
 ```
 
 Una vez hayamos realizado todos estos pasos si realizamos una consulta ```bash kubectl get svc ``` donde nos mostrará lo siguiente:
+
 ![Imagen Tree](../../Imagenes/consulta1.png)
+
 Esto nos mostrará la ip y en nuestro navegador podremos hacer la prueba accediendo a 127.0.0.1:3000 mostrandonos lo que vemos a continuación:
-![Imagen Tree](../../Imagenes/Capturas/consulta2.png)
+
+![Imagen Tree](../../Imagenes/consulta2.png)
