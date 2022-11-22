@@ -18,9 +18,9 @@ FLINE=$(cat comands.txt | grep -n $1 | awk -F ":" 'NR==1{print $1}')
 if [[ $NWORDS -gt 1 ]]; then
    echo "La palabra $1 aparece $NWORDS veces"
    echo "La palabra $1 aparece por primera vez en la linea $FLINE"
-elif [[$NWORDS -eq 1 ]]; then
+elif [[ $NWORDS -eq 1 ]]; then
    echo "La palabra $1 aparece $NWORDS"
    echo "La palabra $1 aparece por primera vez en la linea $FLINE"
 else
-   echo "La paralabra $1 no aparece en el fichero"
+   echo "La palabra $1 no aparece en el fichero"
 fi
