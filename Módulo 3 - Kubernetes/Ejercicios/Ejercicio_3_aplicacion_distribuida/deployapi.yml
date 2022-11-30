@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todoapi
+spec:
+  selector:
+    matchLabels:
+      app: todoapi
+  template:
+    metadata:
+      name: todoapi 
+      labels:
+        app: todoapi
+    spec:
+      containers:
+      - name: main
+        image: todo-api
+        imagePullPolicy: Never
+        env:
+          - name: NODE_ENV
+            value: "production"
+          - name: PORT
+            value: "3000"
+        ports:
+          - containerPort: 3000
