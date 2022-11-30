@@ -43,12 +43,23 @@ docker build -t todo-api .
 ```bash
 docker build -t todo-front .
 ```
-### Añadir imagenes docker a minikube
+### Añadir imagenes docker a minikube.
 Por otro lado todas estas pruebas las estoy realizando en minikube, dado que al tener la imagen generada en local tenemos este comando de minikube que añade la imagen para poder trabajar con ella:
 ```bash
 minikube image load todo-api
 
 minikube image load todo-front
+```
+### Añadir configmap para las variables de entorno.
+```bash
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todoapicm
+data:
+  keys: | 
+    NODE_ENV=production
+    PORT=3000
 ```
 ### Generar deployment.yml y aplicar.
 En este paso deberemos tener en cuenta añadir los env que vamos a mandar a nuestro container y añadir imagePullPolicy: Never para que no intente descargar dicha imagen de ningún repositorio.
@@ -71,11 +82,9 @@ spec:
       - name: main
         image: todo-api
         imagePullPolicy: Never
-        env:
-          - name: NODE_ENV
-            value: "production"
-          - name: PORT
-            value: "3000"
+        envFrom:
+          - configMapRef:
+              name: todoapicm
         ports:
           - containerPort: 3000
 ```

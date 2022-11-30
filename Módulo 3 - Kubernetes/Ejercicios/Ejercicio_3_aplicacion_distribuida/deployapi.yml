@@ -16,10 +16,8 @@ spec:
       - name: main
         image: todo-api
         imagePullPolicy: Never
-        env:
-          - name: NODE_ENV
-            value: "production"
-          - name: PORT
-            value: "3000"
+        envFrom:
+          - configMapRef:
+              name: todoapicm
         ports:
           - containerPort: 3000
