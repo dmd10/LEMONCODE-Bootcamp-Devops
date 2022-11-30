@@ -4,7 +4,7 @@
 
 Construir los distintos recursos de Kubernetes para generar un clúster, como el de la siguiente imagen:
 
-![distributed](../Imagenes/distributed.png)
+![distributed](../../Imagenes/distributed.png)
 
 ### Para ello seguir los siguientes pasos:
 
