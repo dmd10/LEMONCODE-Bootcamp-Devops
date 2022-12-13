@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: front
 spec:
   replicas: 1
   selector:
@@ -23,7 +23,7 @@ spec:
           - name: PORT 
             value: "3000"
           - name: DB_HOST
-            value: "postgres-service"
+            value: "10.100.235.72"
           - name: DB_USER
             value: "postgres"
           - name: DB_PASSWORD

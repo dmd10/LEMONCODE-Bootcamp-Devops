@@ -1,0 +1,30 @@
+version: '3'
+services:
+
+  mongodb:
+    image: "mongo"
+    container_name: mongodb
+    volumes:
+      - kanban-data:/var/lib/postgresql/data
+    ports:
+      - 27017:27017
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - 5000:5000
+    links:
+      - mongodb
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - 8080:8080
+    links:
+      - backend
+
+
+volumes:
+  kanban-data:
