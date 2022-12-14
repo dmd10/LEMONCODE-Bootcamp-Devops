@@ -133,8 +133,24 @@ Por lo tanto en mi caso he usado estos dos comandos:
 
     docker build . -t backend 
   ```
+---
+#### Desplegar Contenedores
+Una vez hayamos hecho todos los pasos anteriores deberemos desplegar los contenedores de la siguiente manera:
+> MongoDB
+  ```properties
+  docker run -dit --name some-mongo -p 27017:27017 -v mongodb:/data/db --network lemoncode-challenge 
+  mongo
+  ```
 
+> Backend
+  ```properties
+  docker run -dit --name topics-api --network lemoncode-challenge topics-api
+  ```
 
+> Frontend
+  ```properties
+  docker run -dit --name frontend -p 8080:3000 -e API_URI=http://topics-api:5000/api/topics --network lemoncode-challenge frontend
+  ```
 ---
 ## Ejercicio 2
 
@@ -152,23 +168,72 @@ Además indico los comandos para levantar el entorno, pararlo o eliminarlo.
 Deberemos generar un archivo llamado docker-compose.yml el cual contendrá el siguiente código:
 
 ```properties
+version: '3'
 
+services:
+
+  mongodb:
+    image: mongo
+    container_name: some-mongo
+    volumes:
+      - mongodb:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - lemoncode-challenge
+
+  backend:
+    build: ./backend
+    container_name: topics-api
+    links:
+      - mongodb
+    networks:
+      - lemoncode-challenge
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - 8080:3000
+    links:
+      - backend
+    environment:
+      - API_URI=http://topics-api:5000/api/topics
+    networks:
+      - lemoncode-challenge
+
+volumes:
+  mongodb:
+networks:
+  lemoncode-challenge:
 ```
 
 Una vez tengamos generado nuestro archivo para **levantar** el entorno deberemos hacer uso del comando: 
 
 ```properties
-docker-compose up docker-compose.yml
+docker-compose up 
 ```
 
 Si queremos **pararlo**:
 
 ```properties
-docker-compose down docker-compose.yml
+docker-compose down 
 ```
 
 Como última opción, si queremos **eliminarlo:**
 ```properties
-docker-compose rm docker-compose.yml
+docker-compose rm 
 ```
+Como podemos comprobar en la siguiente imagen una vez lancemos el comando **docker-compose up** se irán levantado los contenedores.
+
+ ![Imagen](./imagenes/docker_compose_up_1.png)
+
+Esto tambien podemos verlo en **Docker Desktop** de una manera más gráfica:
+
+ ![Imagen](./imagenes/docker_compose_up.png)
+
+ Por último comprobamos que funciona de forma correcta:
+
+  ![Imagen](./imagenes/Navegador.png)
+
 
