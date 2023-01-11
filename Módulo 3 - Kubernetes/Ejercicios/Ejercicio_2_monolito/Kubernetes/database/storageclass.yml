@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   labels:
     addonmanager.kubernetes.io/mode: EnsureExists
-  name: todoappdb
+  name: "postgres"
 provisioner: k8s.io/minikube-hostpath
 reclaimPolicy: Retain 
 volumeBindingMode: Immediate
