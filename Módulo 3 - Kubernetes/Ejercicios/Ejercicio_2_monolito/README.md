@@ -4,7 +4,7 @@
 
 Construir los distintos recursos de Kubernetes para generar un clúster, como el de la siguiente imagen:
 
-![monolith in memory](../monolith.png)
+![monolith in memory](../../Imagenes/monolith.png)
 
 ### Para ello seguir los siguientes pasos:
 
