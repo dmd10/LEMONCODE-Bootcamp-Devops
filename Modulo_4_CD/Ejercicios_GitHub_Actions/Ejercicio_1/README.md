@@ -11,7 +11,7 @@ Copia el directorio [.start-code/hangman-front](../04-github-actions/.start-code
 
 2. Copiamos el contenido de [.start-code/hangman-front](../04-github-actions/.start-code/hangman-front) en el nuevo repositorio:
 
-![imagen](../Imagenes/Github01.png)
+![imagen](../Imagenes/github01.png)
 
 3. Generamos una carpeta **.github/workflows** donde añadiremos el siguiente fichero **yml**:
 
@@ -47,8 +47,11 @@ jobs:
 
 4. Generemos una nueva **rama** en base a main, una vez hayamos generado esta nueva rama modificaremos parte del código como puede ser **.gitignore** con esto consegimos que haya una diferencía por lo tanto se ejecute nuestro **workflow**
 
-![imagen](../Imagenes/Github02.png)
+![imagen](../Imagenes/github02.png)
 
 Como podemos comprobar en los test nos marca un fallo en el código lo cual es un funcionamiento correcto.
+
+![imagen](../Imagenes/github03.png)
+
 
 
