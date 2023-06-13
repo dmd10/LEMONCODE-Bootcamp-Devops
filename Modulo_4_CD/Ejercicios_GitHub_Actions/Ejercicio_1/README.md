@@ -13,8 +13,9 @@ Copia el directorio [.start-code/hangman-front](../04-github-actions/.start-code
 
 ![imagen](../Imagenes/Github01.png)
 
-Generamos una carpeta .github/workflows donde añadiremos el siguiente fichero yml:
+3. Generamos una carpeta **.github/workflows** donde añadiremos el siguiente fichero **yml**:
 
+```sh
 name: Ejercicio1
 on:
   pull_request:
@@ -42,9 +43,12 @@ jobs:
         run: |
           npm ci
           npm test
+```
 
-Generemos una nueva rama en base a main para posteriormente modificar por ejemplo .gitignore añadiendo cualquier valor, haciendo esto consegimos que haciendo el pull request salte el github actions
+4. Generemos una nueva **rama** en base a main, una vez hayamos generado esta nueva rama modificaremos parte del código como puede ser **.gitignore** con esto consegimos que haya una diferencía por lo tanto se ejecute nuestro **workflow**
 
 ![imagen](../imagenes/github02.png)
+
+Como podemos comprobar en los test nos marca un fallo en el código lo cual es un funcionamiento correcto.
 
 
