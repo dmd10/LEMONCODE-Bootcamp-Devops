@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+spec:
+  selector:
+    matchLabels:
+      app: postgres
+  serviceName: postgres
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: todoappdb
+        imagePullPolicy: Never
+        envFrom:
+          - configMapRef:
+              name: database-cm
+        ports:
+        - containerPort: 5432
+          name: postgres
+        volumeMounts:
+        - name: postgres
+          mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+  - metadata:
+      name: postgres
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: postgres
+      resources:
+        requests:
+          storage: 1Gi      
+

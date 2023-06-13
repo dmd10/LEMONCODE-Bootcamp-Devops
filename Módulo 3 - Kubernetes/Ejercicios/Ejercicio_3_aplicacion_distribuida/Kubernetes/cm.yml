@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todoapicm
+data:
+  keys: | 
+    NODE_ENV=production
+    PORT=3000
+
