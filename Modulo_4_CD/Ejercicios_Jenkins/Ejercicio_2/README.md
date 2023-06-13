@@ -24,20 +24,20 @@ Una vez iniciado el contenedor podremos acceder a el mediante la ruta **localhos
 
 > En los **logs** del contenedor podremos ver la contraseña que deberemos añadir al iniciar Jenkins.
 
-![jenkins](../imagenes/jenkins.png)
+![jenkins](../Imagenes/jenkins.png)
 
 Una vez tengamos añadida la contraseña se nos abrirá una nueva ventana para customizar nuestro Jenkins como podemos ver en la siguiente imagen, donde deberemos dar en **Install suggested plugins** para que nos instale los plugins más utilizados y que nos pueden hacer falta a posteriori.
 
-![jenkins](../imagenes/jenkins1.png)
+![jenkins](../Imagenes/jenkins1.png)
 
 
 Una vez se hayan instalado todos los plugins nos aparecerá la siguiente ventana donde deberemos elegir el username, password, etc 
 
-![jenkins](../imagenes/jenkins2.png)
+![jenkins](../Imagenes/jenkins2.png)
 
 Una vez demos en **Save and Continue** nos saldrá está nueva configuración, que deberemos dejarlo tal y como está: 
 
-![jenkins](../imagenes/jenkins3.png)
+![jenkins](../Imagenes/jenkins3.png)
 
 Ya podremos hacer uso de nuestro **Jenkins**
 
@@ -90,10 +90,10 @@ Una vez hayamos realizado estos pasos deberemos configurar un nuevo **item** de 
   > Tener en cuenta que por defecto viene como master y en nuestro caso la rama es main.
 - Script Path donde pondremos la ruta donde se encuentra nuestro Jenkinsfile
 
-![imagen](../imagenes/jenkins4.png)
+![imagen](../Imagenes/jenkins4.png)
 
 Una vez realizado estos pasos guardaremos la configuración y daremos click en **Build Now**, podremos ver el proceso desde el **Console Output** como podemos ver en la siguiente imagen:
 
-![imagen](../imagenes/jenkins6.png)
+![imagen](../Imagenes/jenkins6.png)
 
 

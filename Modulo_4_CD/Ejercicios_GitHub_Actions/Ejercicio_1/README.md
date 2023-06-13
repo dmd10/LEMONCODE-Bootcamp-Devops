@@ -47,7 +47,7 @@ jobs:
 
 4. Generemos una nueva **rama** en base a main, una vez hayamos generado esta nueva rama modificaremos parte del código como puede ser **.gitignore** con esto consegimos que haya una diferencía por lo tanto se ejecute nuestro **workflow**
 
-![imagen](../imagenes/github02.png)
+![imagen](../Imagenes/Github02.png)
 
 Como podemos comprobar en los test nos marca un fallo en el código lo cual es un funcionamiento correcto.
 
