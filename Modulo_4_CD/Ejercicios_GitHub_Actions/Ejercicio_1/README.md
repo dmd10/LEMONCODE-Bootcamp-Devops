@@ -5,11 +5,13 @@ Copia el directorio [.start-code/hangman-front](../04-github-actions/.start-code
 * Build del proyecto de front
 * Ejecutar los unit tests
 
-Generamos un nuevo repositorio para las pruebas https://github.com/dmd10/github-actions-bootcamp.git
+#### Pasos a seguir:
 
-Copiamos el contenido de [.start-code/hangman-front](../04-github-actions/.start-code/hangman-front) en el nuevo repositorio:
+1. Generamos un nuevo repositorio para las pruebas https://github.com/dmd10/github-actions-bootcamp.git
 
-IMAGEN
+2. Copiamos el contenido de [.start-code/hangman-front](../04-github-actions/.start-code/hangman-front) en el nuevo repositorio:
+
+![imagen](../Imagenes/Github01.png)
 
 Generamos una carpeta .github/workflows donde añadiremos el siguiente fichero yml:
 
